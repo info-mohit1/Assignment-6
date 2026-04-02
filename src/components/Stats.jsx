@@ -5,6 +5,7 @@ const Stats = () => {
     { value: "12M+", label: "Tasks Automated" }
   ];
 
+  
   return (
     <section className="bg-[#020617] py-16">
       <div className="w-full bg-gradient-to-r from-purple-600 to-indigo-700">
