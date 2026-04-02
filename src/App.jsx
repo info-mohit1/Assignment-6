@@ -42,7 +42,7 @@ function App() {
     toast.success("Checkout successful 🎉");
   };
 
-  // --- Render Helpers ---
+ 
 
   const renderActiveView = () => {
     if (activeTab === "products") {
