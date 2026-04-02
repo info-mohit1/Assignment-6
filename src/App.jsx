@@ -102,7 +102,7 @@ function App() {
         {renderActiveView()}
       </main>
 
-      {/* --- Informational Sections --- */}
+       
       <Steps />
       <Pricing />
       <CTA />
