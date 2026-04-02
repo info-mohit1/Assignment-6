@@ -52,4 +52,5 @@ const Navbar = ({ cart = [] }) => {
   );
 };
 
+
 export default Navbar;
