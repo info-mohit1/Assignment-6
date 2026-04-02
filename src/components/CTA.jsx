@@ -6,6 +6,7 @@ const CTA = () => {
         <p className="mb-10 text-lg text-purple-100 opacity-90">
           Join thousands of professionals who are already using DigiTools to work smarter. Start your free trial today.
         </p>
+        
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button className="px-10 py-4 font-bold text-purple-700 bg-white rounded-full hover:shadow-2xl transition-all">
             Explore Products
