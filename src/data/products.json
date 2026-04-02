@@ -19,7 +19,7 @@
     "features": ["Hosting", "Custom domain", "SEO tools"],
     "icon": "🌐"
   },
-  
+
   {
     "id": 3,
     "name": "Logo Generator",
@@ -40,6 +40,7 @@
     "features": ["Auto calculations", "PDF download", "Client management"],
     "icon": "🧾"
   },
+
   {
     "id": 5,
     "name": "Password Manager",
