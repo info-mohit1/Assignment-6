@@ -1,28 +1,81 @@
-const Pricing = () => {
-  const plans = [
-    { name: "Starter", price: "0", color: "bg-[#0F172A]", btn: "bg-purple-600" },
-    { name: "Pro", price: "29", color: "bg-purple-600", btn: "bg-white text-black" },
-    { name: "Enterprise", price: "99", color: "bg-[#0F172A]", btn: "bg-purple-600" }
-  ];
+import { useState } from "react";
+
+const Navbar = ({ cart = [] }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section className="bg-[#020617] text-white px-6 py-24 text-center max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-      <p className="text-gray-400 mb-16 max-w-2xl mx-auto">Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+    <div className="text-white bg-gray-900 shadow-md">
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        {plans.map((plan) => (
-          <div key={plan.name} className={`${plan.color} p-8 rounded-2xl border border-gray-800 hover:scale-105 transition-transform duration-300`}>
-            <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-            <p className="text-4xl font-bold mb-6">${plan.price}<span className="text-sm font-normal opacity-70">/mo</span></p>
-            <button className={`w-full py-3 rounded-full font-bold transition-all ${plan.btn} hover:opacity-90`}>
-              {plan.name === "Pro" ? "Start Pro Trial" : "Get Started"}
+    
+      <div className="flex items-center justify-between px-6 py-4">
+
+  
+        <h1 className="text-2xl font-bold text-purple-500">
+          Digi<span className="text-white">Tools</span>
+        </h1>
+
+        {/*  Menu Section (Desktop) */}
+        <div className="hidden gap-6 font-medium text-gray-300 md:flex">
+          <a href="#" className="hover:text-white">Products</a>
+          <a href="#" className="hover:text-white">Features</a>
+          <a href="#" className="hover:text-white">Pricing</a>
+          <a href="#" className="hover:text-white">Testimonials</a>
+          <a href="#" className="hover:text-white">FAQ</a>
+        </div>
+
+
+        <div className="flex items-center gap-4">
+
+          {/* Cart Icon Section (⭐) */}
+          <div className="relative text-xl cursor-pointer">
+            🛒
+            <span className="absolute -top-2 -right-3 bg-purple-600 text-white text-xs px-2 py-0.5 rounded-full">
+              {cart.length}
+            </span>
+          </div>
+
+       
+          <div className="items-center hidden gap-3 md:flex">
+            <button className="text-gray-300 hover:text-white">
+              Login
+            </button>
+            <button className="px-4 py-2 text-white bg-purple-600 rounded-full hover:bg-purple-700">
+              Get Started
             </button>
           </div>
-        ))}
+
+          {/* Hamburger Icon For Mobile  */}
+          <button
+            className="text-2xl md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
+        </div>
       </div>
-    </section>
+
+      {/*  Menu Section (Mobile) */}
+      {menuOpen && (
+        <div className="flex flex-col gap-4 px-6 pb-4 text-gray-300 md:hidden">
+
+          <a href="#" className="hover:text-white">Products</a>
+          <a href="#" className="hover:text-white">Features</a>
+          <a href="#" className="hover:text-white">Pricing</a>
+          <a href="#" className="hover:text-white">Testimonials</a>
+          <a href="#" className="hover:text-white">FAQ</a>
+
+          <hr className="border-gray-700" />
+
+          <button className="text-left hover:text-white">Login</button>
+          <button className="px-4 py-2 text-white bg-purple-600 rounded-full w-fit hover:bg-purple-700">
+            Get Started
+          </button>
+
+        </div>
+      )}
+
+    </div>
   );
 };
 
-export default Pricing;
+export default Navbar;
