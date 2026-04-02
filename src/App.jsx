@@ -13,10 +13,7 @@ import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
 import CTA from "./components/CTA";
 
-/**
- * App Component
- * Handles global state for the shopping cart and view switching.
- */
+ 
 function App() {
   const [cart, setCart] = useState([]);
   const [activeTab, setActiveTab] = useState("products");
